@@ -1,0 +1,30 @@
+.Messages{ 
+    grid-area: mp;
+    background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+    height: 93vh;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  .message{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    background-color:rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    height: 93vh;
+
+
+  }
+  .contacts{
+padding: 10px;
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+  }
+  .contact{
+
+  }
+  .dialog{
+    padding: 10px;
+    background-color: rgb(253, 253, 253);
+    margin-left: 2px;
+    border-radius: 10px;
+  }

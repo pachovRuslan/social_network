@@ -1,0 +1,24 @@
+
+body {
+  min-height: 100%;
+  background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+  
+
+}
+.app-wrapper{
+  grid-template-areas: "h h"
+  "n mp";
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  margin: 0px auto;
+  max-width: 1080px;
+
+
+}
+
+
+
+ 

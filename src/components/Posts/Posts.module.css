@@ -1,0 +1,16 @@
+.h1{
+    color: rgb(0, 0, 0);
+    
+}
+.np{
+    color: rgb(0, 0, 0);  
+}
+.post{
+    color: rgb(0, 0, 0);    
+} 
+.post img{
+    padding: 3px 0px 0px 5px;
+    max-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+}
