@@ -1,0 +1,58 @@
+.Messages{ 
+    grid-area: mp;
+    background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+    height: 93vh;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  .message{
+    display: grid;
+    grid-template-columns: 4fr 10fr;
+    background-color:rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    height: 93vh;
+
+
+  }
+  .contacts{
+padding: 10px;
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+  }
+  .contact{
+    display: table;
+    margin-top: 10px;
+    width: 280px;
+    height: 50px;
+    padding-bottom: 10px;
+    border-bottom-width: 1px; 
+    border-bottom-style: solid;
+    border-bottom-color: rgb(95, 95, 95);
+  }
+  .contact::after {
+    content: '';
+    background-color: rgb(0, 0, 0);
+    height: 1px;
+ 
+
+  }
+  .dialog{
+    padding: 10px;
+    background-color: rgb(253, 253, 253);
+    margin-left: 2px;
+    border-radius: 10px;
+  }
+  .friend_ava img{
+    width: 60px;
+    border-radius:50%;
+  }
+  .friend_ava{
+    width: 60px;
+    display: table-cell;
+    padding-right: 10px;
+  }
+  .friend_name{
+    display: table-cell;
+    padding-left: 10px;
+    vertical-align: top
+  }

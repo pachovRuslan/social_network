@@ -1,8 +1,8 @@
 
 body {
   min-height: 100%;
-  background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
-  
+  background-color:  #e6e6e6;
+  font-family: tahoma;
 
 }
 .app-wrapper{
