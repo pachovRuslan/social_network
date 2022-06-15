@@ -7,60 +7,6 @@
 
 }
 
-.avatar {
-  width: 250px;
-  height: 300px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-
-}
-
-.avatar img {
-  max-width: 220px;
-  margin-top: 10px;
-  margin-left: 15px;
-  border-radius: 10px;
-
-}
-
-.button_photo {
-  width: 200px;
-  height: 30px;
-  margin-left: 23px;
-  margin-top: 10px;
-}
-
-.information {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-  width: 600px;
-  margin-left: 10px;
-
-}
-
-.information span {
-  font-size: 26px;
-  margin-left: 20px;
-  
-}
-
-.information span::after {
-  content: '';
-  background-color: rgb(192, 181, 181);
-  height: 1px;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 10px;
-  display: block;
-}
-
-.info p {
-  margin-top: 20px;
-  margin-left: 20px;
-  font-size: 18px;
-  font-weight: 200;
-}
 
 .block2 {
   color: rgb(0, 0, 0);
@@ -72,28 +18,6 @@
 
 }
 
-.friend_bar {
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-  margin-top: -12px;
-  display:flex;
-  flex-wrap:wrap;
-  padding: 10px;
-  font-size: 14px;
-}
-.friend_ava{
-  height:60px;
-   width:calc( ( 100% - 40px ) / 3 );
-  margin:0 0 20px;
-}
-.friend_ava:nth-child(3n-1){
-  margin-left:20px;
-  margin-right:15px;
-}
-.friend_ava img{
-  max-width: 70px;
-  border-radius:50%;
-}
 .new_post {
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
@@ -147,3 +71,13 @@
   width: 600px;
 
 }
+.friend_bar {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  height: 150px;
+  overflow: auto;
+}
+

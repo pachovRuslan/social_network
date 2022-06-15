@@ -15,21 +15,21 @@ const Nav = () => {
         </div>
       <div className={style.item}>
         <span>
-          <img src="img/profile.png" alt="profile" />
+          <img src="img/news.png" alt="news" />
         </span>
-        <Link to="https://www.reactjs.org">News </Link>        
+        <Link to="/news">News </Link>        
       </div>
       <div className={style.item}>
         <span>
-          <img src="img/profile.png" alt="profile" />
+          <img src="img/music.png" alt="music" />
         </span>
-        <a  href="https://www.reactjs.org">Music </a>
+        <Link to="/music">Music </Link>  
       </div>
       <div className={style.item}>
         <span>
           <img src="img/setting.png" alt="setting" />
         </span>
-        <a  href="https://www.reactjs.org">Settings </a>
+        <Link to="/setting">Setting </Link>  
 
       </div>
     </div>

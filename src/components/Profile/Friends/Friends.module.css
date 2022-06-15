@@ -1,0 +1,15 @@
+.friend_ava {
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.friend_ava img {
+    max-width: 50px;
+    height:50px;
+    border-radius: 50%;
+}

@@ -1,10 +1,10 @@
 import Profile from '../Profile/Index';
 import style from './Content.module.css'
 
-const Content = () => {
-  return (
+const Content = (props) => {
+ return (
     <div className={style.Content}>
-      <Profile/>
+      <Profile  friendsData={props.friendsData}/>
     </div>
   );
 }
