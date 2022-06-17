@@ -9,8 +9,8 @@
 
 
 .block2 {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+ 
+  background-color: rgba(211, 211, 211, 0.322);
   border-radius: 10px;
   margin-top: 10px;
   padding-top: 5px;
@@ -19,8 +19,8 @@
 }
 
 .new_post {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+
+  background-color: rgba(211, 211, 211, 0.322);
   border-radius: 10px;
   margin-top: 10px;
   margin-left: 10px;
@@ -31,26 +31,16 @@
   margin-left: 10px;
   margin-top: 10px;
   position: relative;
+  background-color: rgba(211, 211, 211, 0.322);
+  
 }
 
-.new_post:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin-top: 10px;
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
-  background: url('https://mywebicons.ru/i/jpg/94cf5b9ae34581a01f115f42fc7dd545.jpg') no-repeat;
-  background-size: cover;
-}
+
 
 .new_post input {
   margin-top: 5px;
   margin-left: 5px;
-  width: 580px;
+  width: 550px;
   height: 25px;
   Border: none;
   outline: none;
@@ -58,13 +48,13 @@
 
 .info {
   font-size: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(211, 211, 211, 0.322);
   border-radius: 10px;
 
 }
 
 .post {
-  background-color: rgba(255, 255, 255, 0);
+ 
   border-radius: 10px;
   margin-left: 10px;
   margin-top: 10px;
@@ -72,12 +62,26 @@
 
 }
 .friend_bar {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(211, 211, 211, 0.322);
   border-radius: 10px;
   display:flex;
   flex-wrap:wrap;
   flex-direction: row;
   height: 150px;
   overflow: auto;
+  -ms-overflow-style: none;
+      scrollbar-width: none;
+  
 }
+.friend_bar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.send_button img {
+  max-width: 30px;
+}
+.send_button {
+  float: right;
+ margin-top: -27px;
 
+}

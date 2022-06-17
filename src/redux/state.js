@@ -1,28 +1,6 @@
 let state = {
-    postsData: [
-        {
-            name: 'Banny Rabbit', data: '31.12.2021', message: 'There are three things which the superior man guards against. In youth...lust. When he is strong...quarrelsomeness. When he is old...covetousness.'
-            , like_count: '0', avatar: <img src='img/1 (3).jpg' alt="ava" />
-        },
-        {
-            name: 'Banny Rabbit', data: '12.12.2021', message: 'There are three things which the superior man guards against. In youth...lust. When he is strong...quarrelsomeness. When he is old...covetousness.'
-            , like_count: '4', avatar: <img src='img/1 (3).jpg' alt="ava" />
-        },
-        {
-            name: 'Banny Rabbit', data: '15.12.2021', message: 'Always dream and shoot higher than you know you can do. Do not bother just to be better than your contemporaries or predecessors. Try to be better than yourself.  Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
-            , avatar: <img src='img/1 (3).jpg' alt="ava" />, like_count: '2'
-        },
-        {
-            name: 'Banny Rabbit', data: '10.12.2021', message: 'While we are postponing, life speeds by. Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
-            , like_count: '6', avatar: <img src='img/1 (3).jpg' alt="ava" />
-        },
-        {
-            name: 'Banny Rabbit', data: '12.11.2021', message: 'While we are postponing, life speeds by. Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
-            , like_count: '9', avatar: <img src='img/1 (3).jpg' alt="ava" />
-        }
 
-    ],
-    friendsData: [
+    profilesData: [
         {
             id: '1', name: 'Mary Jane', avatar: <img src='img/1 (1).jpg' alt="ava" />, birthday: " 23 November", Current_city: "Polotsk",
             Relationship: "Married to Yulia Pachkova",
@@ -89,13 +67,12 @@ let state = {
             id: '6', name: 'Andry Hype', avatar: <img src='img/1 (6).jpg' alt="ava" />, birthday: " 18 september", Current_city: "Grodno",
             Relationship: "Married to Yulia Pachkova",
             Hometown: "Гомель",
-            Mobile: "+375295933125", posts: [
-         
-         
+            Mobile: "+375295933125", 
+            posts: [
                 {
-                    data: '10.12.2021', message: 'While we are postponing, life speeds by. Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
-                    , like_count: '6'
-                },]
+                    data: '12.11.2021', message: 'While we are postponing, life speeds by. Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
+                    , like_count: '9'
+                }]
         },
         {
             id: '7', name: 'Alexa Sprank', avatar: <img src='img/1 (7).jpg' alt="ava" />, birthday: " 22 june", Current_city: "Brest",
@@ -107,19 +84,34 @@ let state = {
             id: '8', name: 'Dipper Hall', avatar: <img src='img/1 (8).jpg' alt="ava" />, birthday: " 29 may", Current_city: "Postavi",
             Relationship: "Married to Yulia Pachkova",
             Hometown: "Могилев",
-            Mobile: "+375336541047"
+            Mobile: "+375336541047",
+            posts: [
+                {
+                    data: '14.11.2021', message: 'While we are postponing, life speeds by. Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
+                    , like_count: '9'
+                }]
         },
         {
             id: '9', name: 'Jeck Black', avatar: <img src='img/1 (9).jpg' alt="ava" />, birthday: " 9 october", Current_city: "Moskov",
             Relationship: "Married to Yulia Pachkova",
             Hometown: "Поставы",
-            Mobile: "+3752576534419"
+            Mobile: "+3752576534419",
+            posts: [
+                {
+                    data: '14.11.2021', message: 'While we are postponing, life speeds by. Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
+                    , like_count: '9'
+                }]
         },
         {
             id: '10', name: 'Jon Troffy', avatar: <img src='img/1 (10).jpg' alt="ava" />, birthday: " 26 febryary", Current_city: "New York",
             Relationship: "Married to Yulia Pachkova",
             Hometown: "Брест",
-            Mobile: "+375295911848"
+            Mobile: "+375295911848",
+            posts: [
+                {
+                    data: '12.11.2021', message: 'While we are postponing, life speeds by. Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
+                    , like_count: '9'
+                }]
         }
     ],
 
@@ -141,4 +133,12 @@ let state = {
         { message: 'its last sentense', id: '15' },
     ]
 }
+export let addPost = (postMessage) => {
+    let newPost ={
+        data: 'default',
+        message: postMessage,
+        like_count: '9'};
+        state.profilesData[0].posts.push(newPost);
+    }
+
 export default state

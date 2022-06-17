@@ -1,8 +1,9 @@
 import React from 'react'
 import style from './ProfileInfo.module.css'
-import Header from '../../Header/Index'
+import Header from '../../Header/Header'
 function ProfileInfo(props) {
-  <Header props={props} />
+
+ 
 
   return (
     <>

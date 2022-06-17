@@ -3,7 +3,11 @@ body {
   min-height: 100%;
   background-color:  #e6e6e6;
   font-family: tahoma;
-
+}
+a {
+  color: #ff0000 !important; 
+  text-decoration: none;
+ 
 }
 .app-wrapper{
   grid-template-areas: "h h"
@@ -15,10 +19,30 @@ body {
   grid-row-gap: 2px;
   margin: 0px auto;
   max-width: 1080px;
-
-
 }
 
 
+:root[data-theme="light"] {
+  --background-color: #fafafa;
+  color:black
+  }
+  a {
+    color: rgb(5, 5, 5) !important;
+    text-decoration: none;
+  }
+  
+
+:root[data-theme="dark"] {
+  --background-color: #1e2520e5;
+  color: #e6e6e6;
+}
+
+body {
+  background: var(--background-color);
+}
+a {
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none;
+}
 
  

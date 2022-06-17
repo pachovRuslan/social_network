@@ -1,21 +1,27 @@
 import './App.css';
-import Header from './components/Header/Index.jsx';
-import Nav from './components/Nav/Index.jsx';
-import Content from './components/Content/Index.jsx';
-import Messages from './components/Messages/Index.jsx';
+import Header from './components/Header/Header.jsx';
+import Nav from './components/Nav/Navbar.jsx';
+import Messages from './components/Messages/Messages.jsx';
 import { Routes, Route } from 'react-router-dom';
-import Posts from './components/Profile/Posts/Index';
+import News from './components/news/News';
+import Settings from './components/Settings/Settings';
+import Profile from './components/Profile/Profile';
+
 
 function App(props) {
 
   return (
     <div className='app-wrapper'>
-      <Header  friendsData={props.appState.friendsData}/>
+      <Header />
       <Nav />
-            <Routes>
-        <Route exact path='/messages' element={<Messages messages={props.appState.messages} dialogData={props.appState.friendsData}/>} />
-        <Route exact path='/profile' element={<Content  friendsData={props.appState.friendsData}/>} />
-        <Route exact path='/news' element={<Posts/>}/>
+      {/* <News profilesData={props.appState.profilesData} /> */}
+      <Routes>
+        
+        <Route exact path='/messages' element={<Messages messages={props.appState.messages} profilesData={props.appState.profilesData} />} />
+        <Route exact path='/messages/1' element={<Messages messages={props.appState.messages} profilesData={props.appState.profilesData} />} />
+        <Route exact path='/profile' element={<Profile  profilesData={props.appState.profilesData} addPost={props.appState.addPost}/>} />
+        <Route exact path='/news' element={<News profilesData={props.appState.profilesData} />} />
+        <Route exact path='/setting' element={<Settings />} />
       </Routes>
 
     </div>);
