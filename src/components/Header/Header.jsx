@@ -1,7 +1,7 @@
 import style from './Header.module.css';
 import { Link } from 'react-router-dom';
 const Header = (props) => {
-  console.log(props)
+
 
   return (
     <div className={style.Header}>
@@ -10,10 +10,8 @@ const Header = (props) => {
         <input placeholder="search ... "></input>
       </div>
       <div className={style.Header_logo}>
-        <Link to='/profile'>
-          
-        </Link>
-        </div>
+        <Link to='/profile'></Link>
+      </div>
 
     </div>
   );

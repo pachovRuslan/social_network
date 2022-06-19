@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './ProfileInfo.module.css'
-import Header from '../../Header/Header'
 function ProfileInfo(props) {
 
  

@@ -8,37 +8,40 @@
   height: 50px;
 
 
-  }
-  .Header img {
+}
 
-    width: 50px;
-    max-height: 50px;
-    border-radius: 50%;
-  }
+.Header img {
 
-    .castom_input {
-      margin-left:auto;
-      margin-top: 10px;
-      position: relative;
-    }
-      .castom_input:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        margin-top: 10px;
-        margin-right: 4px;
-        width: 20px;
-        height: 20px;
-        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png') no-repeat;
-        background-size: cover;
-      }
-      input {
-        width: 200px;
-        height: 25px;
-      }
-      .Header_logo{
-        margin-left:auto;
-      }
-    
+  width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+}
+
+.castom_input {
+  margin-left: auto;
+  margin-top: 10px;
+  position: relative;
+}
+
+.castom_input:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 4px;
+  width: 20px;
+  height: 20px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png') no-repeat;
+  background-size: cover;
+}
+
+input {
+  width: 200px;
+  height: 25px;
+}
+
+.Header_logo {
+  margin-left: auto;
+}
