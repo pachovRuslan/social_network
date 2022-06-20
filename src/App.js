@@ -12,33 +12,32 @@ import Profile from './components/Profile/Profile';
 function App(props) {
 
   return (
-   
+
     <div className='app-wrapper'>
       <Header />
       <Nav />
       <Routes>
-        
+
         <Route exact path='/messages' element={<Messages
           messages={props.state.messages}
           profilesData={props.state.profilesData}
           addMessage={props.addMessage}
-        updateNewMessageText={props.updateNewMessageText}
-          />} />
+          updateNewMessageText={props.updateNewMessageText}
+        />} />
 
         <Route exact path='/messages/1' element={<Messages
-        messages={props.state.messages}
-        profilesData={props.state.profilesData} 
-        addMessage={props.addMessage}
-        updateNewMessageText={props.updateNewMessageText}/>} />
+          messages={props.state.messages}
+          profilesData={props.state.profilesData}
+          addMessage={props.addMessage}
+          updateNewMessageText={props.updateNewMessageText} />} />
 
         <Route exact path='/profile' element={<Profile
-        profilesData={props.state.profilesData}
-        addPost={props.addPost}
-        updateNewPostText={props.updateNewPostText}
-        newPostText={props.state.profilesData[0].newPostText}/>} />
+          profilesData={props.state.profilesData}
+          dispatch={props.dispatch}
+          newPostText={props.state.profilesData[0].newPostText} />} />
 
-        <Route exact path='/news' element={<News 
-        profilesData={props.state.profilesData} />} />
+        <Route exact path='/news' element={<News
+          profilesData={props.state.profilesData} />} />
         <Route exact path='/setting' element={<Settings />} />
       </Routes>
 

@@ -1,5 +1,4 @@
 let store = {
-
     _state: {
 
         profilesData: [
@@ -13,7 +12,7 @@ let store = {
                         data: '12.11.2021', message: 'While we are postponing, life speeds by. Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
                         , like_count: '9'
                     }],
-                newPostText:""
+                newPostText: ""
             },
             {
                 id: '2', name: 'Den Fix', avatar: <img src='img/1 (2).jpg' alt="ava" />, birthday: " 10 december", Current_city: "Minsk",
@@ -82,7 +81,7 @@ let store = {
                 id: '7', name: 'Alexa Sprank', avatar: <img src='img/1 (7).jpg' alt="ava" />, birthday: " 22 june", Current_city: "Brest",
                 Relationship: "Married to Yulia Pachkova",
                 Hometown: "Гродно",
-                Mobile: "+375291238732", 
+                Mobile: "+375291238732",
                 posts: [
 
                     {
@@ -141,31 +140,28 @@ let store = {
             { message: 'They remained friends', id: '13' },
             { message: 'it offen rained there', id: '14' },
             { message: 'its last sentense', id: '15' },
-         
-        ],
-        newMessageText: [
-            {newMessageText: ""}
-        ]
-    },
-    getState() {
-        return this._state;
-    },
 
+        ],
+    },
     _callSubscriber() {
         console.log('state changed')
+    },
+
+    getState() {
+        return this._state;
     },
     subscribe(observer) {
         this._callSubscriber = (observer);
     },
 
-    addPost() {
+    _addPost() {
         let newPost = {
             data: '11.11.1911',
             message: this._state.profilesData[0].newPostText,
             like_count: '9'
         };
         this._state.profilesData[0].posts.push(newPost);
-        this._state.profilesData[0].newPostText='';
+        this._state.profilesData[0].newPostText = '';
         this._callSubscriber(this._state)
     },
     addMessage() {
@@ -174,25 +170,29 @@ let store = {
             id: '0'
         };
         this._state.messages.push(newMessage);
-        this._state.messages.newMessageText='';
+        this._state.messages.newMessageText = '';
         this._callSubscriber(this._state)
     },
-    updateNewPostText(newText) {
-  
-        this._state.profilesData[0].newPostText= newText;
+    _updateNewPostText(newText) {
+
+        this._state.profilesData[0].newPostText = newText;
 
         this._callSubscriber(this._state)
     },
     updateNewMessageText(newText) {
-  
-        this._state.newMessageText.newMessageText= newText;
+
+        this._state.newMessageText.newMessageText = newText;
 
         this._callSubscriber(this._state)
     },
 
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            this._addPost();
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._updateNewPostText(action.newText)
+        }
 
-
+    }
 }
-
-
 export default store;
