@@ -1,3 +1,7 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 let store = {
     _state: {
 
@@ -125,52 +129,31 @@ let store = {
         ],
 
         messages: [
-            { message: 'hi dear', id: '1' },
-            { message: 'bye friend', id: '2' },
-            { message: 'lol', id: '3' },
-            { message: 'good job', id: '4' },
-            { message: 'so so', id: '5' },
-            { message: 'ready', id: '6' },
-            { message: 'lets go', id: '7' },
-            { message: 'miss you', id: '8' },
-            { message: 'go home', id: '9' },
-            { message: 'he returted', id: '10' },
-            { message: 'i learn English', id: '11' },
-            { message: 'She passed this test', id: '12' },
-            { message: 'They remained friends', id: '13' },
-            { message: 'it offen rained there', id: '14' },
-            { message: 'its last sentense', id: '15' },
+            { message: 'hi dear', id: 1 },
+            { message: 'bye friend', id: 2 },
+            { message: 'lol', id: 3 },
+            { message: 'good job', id: 4 },
+            { message: 'so so', id: 5 },
+            { message: 'ready', id: 6 },
+            { message: 'lets go', id: 7 },
+            { message: 'miss you', id: 8 },
+            { message: 'go home', id: 9 },
+            { message: 'he returted', id: 10 },
 
         ],
+        newMessageBody: ''
     },
     _callSubscriber() {
         console.log('state changed')
     },
-
-    getState() {
-        return this._state;
-    },
-    subscribe(observer) {
-        this._callSubscriber = (observer);
-    },
-
     _addPost() {
         let newPost = {
-            data: '11.11.1911',
+            data: '01.01.2022',
             message: this._state.profilesData[0].newPostText,
-            like_count: '9'
+            like_count: '0'
         };
         this._state.profilesData[0].posts.push(newPost);
         this._state.profilesData[0].newPostText = '';
-        this._callSubscriber(this._state)
-    },
-    addMessage() {
-        let newMessage = {
-            messages: this._state.newMessageText,
-            id: '0'
-        };
-        this._state.messages.push(newMessage);
-        this._state.messages.newMessageText = '';
         this._callSubscriber(this._state)
     },
     _updateNewPostText(newText) {
@@ -179,20 +162,56 @@ let store = {
 
         this._callSubscriber(this._state)
     },
-    updateNewMessageText(newText) {
 
-        this._state.newMessageText.newMessageText = newText;
-
+    _sendMessage() {
+        let body = this._state.newMessageBody;
+        this._state.messages.push({ message: body, id: 11 });
+        this._state.newMessageBody = '';
         this._callSubscriber(this._state)
     },
+    _updateNewMessageBody(body) {
 
+        this._state.newMessageBody = body;
+        this._callSubscriber(this._state);
+    },
+    getState() {
+        return this._state;
+    },
+    subscribe(observer) {
+        this._callSubscriber = (observer);
+    },
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             this._addPost();
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._updateNewPostText(action.newText)
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._updateNewMessageBody(action.body)
+        } else if (action.type === SEND_MESSAGE) {
+            this._sendMessage();
         }
 
+    }
+
+}
+export const addPostActionCreator = () => {
+    return {
+        type: ADD_POST
+    }
+}
+export const updateNewPostActionCreator = (text) => {
+    return {
+        type: UPDATE_NEW_POST_TEXT, newText: text
+    }
+}
+export const sendMessageCreator = () => {
+    return {
+        type: SEND_MESSAGE
+    }
+}
+export const updateNewMessageBodyCreator = (body) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_BODY, body: body
     }
 }
 export default store;

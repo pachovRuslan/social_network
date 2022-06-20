@@ -10,7 +10,7 @@
 
 .block2 {
  
-  background-color: rgba(211, 211, 211, 0.322);
+  background-color: rgba(104, 104, 104, 0.151);
   border-radius: 10px;
   margin-top: 10px;
   padding-top: 5px;
@@ -20,7 +20,7 @@
 
 .new_post {
 
-  background-color: rgba(211, 211, 211, 0.322);
+  background-color: rgba(104, 104, 104, 0.151);
   border-radius: 10px;
   margin-top: 10px;
   margin-left: 10px;
@@ -31,7 +31,7 @@
   margin-left: 10px;
   margin-top: 10px;
   position: relative;
-  background-color: rgba(211, 211, 211, 0.322);
+  background-color: rgba(104, 104, 104, 0.151);
   
 }
 
@@ -48,7 +48,7 @@
 
 .info {
   font-size: 20px;
-  background-color: rgba(211, 211, 211, 0.322);
+  background-color: rgba(104, 104, 104, 0.151);
   border-radius: 10px;
 
 }
@@ -62,7 +62,7 @@
 
 }
 .friend_bar {
-  background-color: rgba(211, 211, 211, 0.322);
+  background-color: rgba(104, 104, 104, 0.151);
   border-radius: 10px;
   display:flex;
   flex-wrap:wrap;

@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './Messages.module.css';
 import { Link } from 'react-router-dom';
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/state';
 
 const DialogItem = (props) => {
   let path = "/messages/" + props.id;
@@ -30,12 +31,12 @@ function Messages(props) {
 
   let addMessage = () => {
 
-    props.addMessage();
+    props.dispatch(sendMessageCreator());
 
   }
-  let onMessageChange =() => {
-    let text = newMessageElement.current.value;
-    props.updateNewMessageText(text)
+  let onMessageChange = () => {
+    let body = newMessageElement.current.value;
+    props.dispatch(updateNewMessageBodyCreator(body))
 
   }
 
@@ -57,12 +58,12 @@ function Messages(props) {
               id={message.id} />))}
           </div>
           <div className={style.input_block}>
-          <input
-          placeholder="create new post ... "
-          onChange={onMessageChange}
-          value={props.newMessageText}
-          ref={newMessageElement}
-          />
+            <input
+              placeholder="create new post ... "
+              onChange={onMessageChange}
+              value={props.newMessageBody}
+              ref={newMessageElement}
+            />
             <div className={style.send_button}>
               <img onClick={addMessage} src='img/send.png' alt='send'></img>
             </div>

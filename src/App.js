@@ -14,22 +14,22 @@ function App(props) {
   return (
 
     <div className='app-wrapper'>
-      <Header />
+      <Header  avatar={props.state.profilesData[0].avatar}/>
       <Nav />
       <Routes>
 
         <Route exact path='/messages' element={<Messages
           messages={props.state.messages}
           profilesData={props.state.profilesData}
-          addMessage={props.addMessage}
-          updateNewMessageText={props.updateNewMessageText}
+          dispatch={props.dispatch}
+          newMessageBody={props.state.newMessageBody}
         />} />
 
         <Route exact path='/messages/1' element={<Messages
           messages={props.state.messages}
           profilesData={props.state.profilesData}
-          addMessage={props.addMessage}
-          updateNewMessageText={props.updateNewMessageText} />} />
+          dispatch={props.dispatch}
+          newMessageBody={props.state.newMessageBody} />} />
 
         <Route exact path='/profile' element={<Profile
           profilesData={props.state.profilesData}
