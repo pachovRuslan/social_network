@@ -4,11 +4,18 @@ import Posts from './Posts/Index';
 import FriendsBar from './FriendsBar/FriendsBar';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 function Profile(props) {
+
   let newPostElement = React.createRef();
 
   let addPost = () => {
+
+    props.addPost();
+
+  }
+  let onPostChange =() => {
     let text = newPostElement.current.value;
-    props.addPost(text);
+    props.updateNewPostText(text)
+
   }
 
 
@@ -28,7 +35,14 @@ function Profile(props) {
         Friends 9
       </div>
       <div className={style.new_post}>
-        <div><input placeholder="Create new post ... " ref={newPostElement} ></input></div>
+        <div>
+          <input
+          placeholder="write new message ... "
+          onChange={onPostChange}
+          value={props.newPostText}
+          ref={newPostElement}
+          />
+          </div>
         <div className={style.send_button}>
           <img onClick={addPost} src='img/send.png' alt='send'></img>
         </div>

@@ -29,9 +29,16 @@ function Messages(props) {
   let newMessageElement = React.createRef();
 
   let addMessage = () => {
-    let text = newMessageElement.current.value;
-    props.addMessage(text);
+
+    props.addMessage();
+
   }
+  let onMessageChange =() => {
+    let text = newMessageElement.current.value;
+    props.updateNewMessageText(text)
+
+  }
+
 
 
   return (
@@ -50,7 +57,12 @@ function Messages(props) {
               id={message.id} />))}
           </div>
           <div className={style.input_block}>
-            <input ref={newMessageElement}></input>
+          <input
+          placeholder="create new post ... "
+          onChange={onMessageChange}
+          value={props.newMessageText}
+          ref={newMessageElement}
+          />
             <div className={style.send_button}>
               <img onClick={addMessage} src='img/send.png' alt='send'></img>
             </div>

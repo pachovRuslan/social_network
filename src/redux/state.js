@@ -12,7 +12,8 @@ let store = {
                     {
                         data: '12.11.2021', message: 'While we are postponing, life speeds by. Источник - Онлайн школа Skysmart: https://skysmart.ru/articles/english/citaty-na-anglijskom-s-perevodom'
                         , like_count: '9'
-                    }]
+                    }],
+                newPostText:""
             },
             {
                 id: '2', name: 'Den Fix', avatar: <img src='img/1 (2).jpg' alt="ava" />, birthday: " 10 december", Current_city: "Minsk",
@@ -140,6 +141,10 @@ let store = {
             { message: 'They remained friends', id: '13' },
             { message: 'it offen rained there', id: '14' },
             { message: 'its last sentense', id: '15' },
+         
+        ],
+        newMessageText: [
+            {newMessageText: ""}
         ]
     },
     getState() {
@@ -156,22 +161,36 @@ let store = {
     addPost() {
         let newPost = {
             data: '11.11.1911',
-            message: this._state.profilesData[0].posts.Message,
+            message: this._state.profilesData[0].newPostText,
             like_count: '9'
         };
         this._state.profilesData[0].posts.push(newPost);
-
+        this._state.profilesData[0].newPostText='';
         this._callSubscriber(this._state)
     },
     addMessage() {
         let newMessage = {
-            messages: this._state.sendMessage,
+            messages: this._state.newMessageText,
             id: '0'
         };
         this._state.messages.push(newMessage);
+        this._state.messages.newMessageText='';
+        this._callSubscriber(this._state)
+    },
+    updateNewPostText(newText) {
+  
+        this._state.profilesData[0].newPostText= newText;
 
         this._callSubscriber(this._state)
-    }
+    },
+    updateNewMessageText(newText) {
+  
+        this._state.newMessageText.newMessageText= newText;
+
+        this._callSubscriber(this._state)
+    },
+
+
 
 }
 
