@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Messages.module.css';
 import { Link } from 'react-router-dom';
-import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/state';
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/messagesReducer';
 
 const DialogItem = (props) => {
   let path = "/messages/" + props.id;
@@ -35,8 +35,8 @@ function Messages(props) {
 
   }
   let onMessageChange = () => {
-    let body = newMessageElement.current.value;
-    props.dispatch(updateNewMessageBodyCreator(body))
+    let text = newMessageElement.current.value;
+    props.dispatch(updateNewMessageBodyCreator(text))
 
   }
 

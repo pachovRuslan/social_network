@@ -1,7 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+import messagesReducer from "./messagesReducer";
+import profilesDataReducer from "./profilesDataReducer";
 let store = {
     _state: {
 
@@ -129,51 +127,15 @@ let store = {
         ],
 
         messages: [
-            { message: 'hi dear', id: 1 },
-            { message: 'bye friend', id: 2 },
-            { message: 'lol', id: 3 },
-            { message: 'good job', id: 4 },
-            { message: 'so so', id: 5 },
-            { message: 'ready', id: 6 },
-            { message: 'lets go', id: 7 },
-            { message: 'miss you', id: 8 },
-            { message: 'go home', id: 9 },
-            { message: 'he returted', id: 10 },
-
+            { message: 'hi dear', id: '1' ,
+            newMessageBody: ''}
         ],
-        newMessageBody: ''
+      
     },
     _callSubscriber() {
         console.log('state changed')
     },
-    _addPost() {
-        let newPost = {
-            data: '01.01.2022',
-            message: this._state.profilesData[0].newPostText,
-            like_count: '0'
-        };
-        this._state.profilesData[0].posts.push(newPost);
-        this._state.profilesData[0].newPostText = '';
-        this._callSubscriber(this._state)
-    },
-    _updateNewPostText(newText) {
 
-        this._state.profilesData[0].newPostText = newText;
-
-        this._callSubscriber(this._state)
-    },
-
-    _sendMessage() {
-        let body = this._state.newMessageBody;
-        this._state.messages.push({ message: body, id: 11 });
-        this._state.newMessageBody = '';
-        this._callSubscriber(this._state)
-    },
-    _updateNewMessageBody(body) {
-
-        this._state.newMessageBody = body;
-        this._callSubscriber(this._state);
-    },
     getState() {
         return this._state;
     },
@@ -181,37 +143,12 @@ let store = {
         this._callSubscriber = (observer);
     },
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            this._addPost();
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._updateNewPostText(action.newText)
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._updateNewMessageBody(action.body)
-        } else if (action.type === SEND_MESSAGE) {
-            this._sendMessage();
-        }
-
+        this._state.profilesData[0]=profilesDataReducer(this._state.profilesData[0], action)
+        this._state.messages=messagesReducer(this._state.messages,action)
+        this._callSubscriber(this._state)
+        
     }
 
 }
-export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    }
-}
-export const updateNewPostActionCreator = (text) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT, newText: text
-    }
-}
-export const sendMessageCreator = () => {
-    return {
-        type: SEND_MESSAGE
-    }
-}
-export const updateNewMessageBodyCreator = (body) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_BODY, body: body
-    }
-}
+
 export default store;

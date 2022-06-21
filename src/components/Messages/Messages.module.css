@@ -1,6 +1,6 @@
 .Messages {
   grid-area: mp;
-  background-color: rgba(104, 104, 104, 0.151);
+  background-color:  rgba(104, 104, 104, 0.151);
   height: 90vh;
   display: inline-block;
   border-radius: 10px;
@@ -9,7 +9,7 @@
 .message {
   display: grid;
   grid-template-columns: 4fr 10fr;
-  background-color: rgba(211, 211, 211, 0.123);
+
   border-radius: 10px;
   height: 90vh;
 
@@ -103,3 +103,13 @@
   vertical-align: top;
   font-size: 14px
 }
+.select_block{
+  font-size: 14px;
+  color: #808080;
+  margin:auto auto;
+}
+.select_block img{
+  width: 80px;
+  
+}
+

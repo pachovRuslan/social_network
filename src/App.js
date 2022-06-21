@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header/Header.jsx';
 import Nav from './components/Nav/Navbar.jsx';
 import Messages from './components/Messages/Messages.jsx';
+import Dialog from './components/Messages/Dialog.jsx';
 import { Routes, Route } from 'react-router-dom';
 import News from './components/news/News';
 import Settings from './components/Settings/Settings';
@@ -18,11 +19,10 @@ function App(props) {
       <Nav />
       <Routes>
 
-        <Route exact path='/messages' element={<Messages
-          messages={props.state.messages}
+        <Route exact path='/messages' element={<Dialog
+         
           profilesData={props.state.profilesData}
-          dispatch={props.dispatch}
-          newMessageBody={props.state.newMessageBody}
+      
         />} />
 
         <Route exact path='/messages/1' element={<Messages

@@ -3,7 +3,7 @@ import style from './Profile.module.css';
 import Posts from './Posts/Index';
 import FriendsBar from './FriendsBar/FriendsBar';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
-import {addPostActionCreator, updateNewPostActionCreator} from '../../redux/state.js'
+import {addPostActionCreator, updateNewPostActionCreator} from '../../redux/profilesDataReducer'
 
 function Profile(props) {
 
