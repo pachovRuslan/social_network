@@ -10,10 +10,8 @@ const DialogItem = (props) => {
       <div className={style.friend_ava}>{props.avatar}</div>
       <div className={style.friend_name}><Link to={path}>{props.name}</Link></div>
     </div>
-
   )
 }
-
 const MessagesItem = (props) => {
   return (
     <div>
@@ -23,25 +21,15 @@ const MessagesItem = (props) => {
     </div>
   )
 }
-
-
 function Messages(props) {
-
   let newMessageElement = React.createRef();
-
   let addMessage = () => {
-
     props.dispatch(sendMessageCreator());
-
   }
   let onMessageChange = () => {
     let text = newMessageElement.current.value;
     props.dispatch(updateNewMessageBodyCreator(text))
-
   }
-
-
-
   return (
     <div className={style.Messages}>
       <div className={style.message}>

@@ -11,7 +11,7 @@ const Nav = () => {
          </div >
       <div className={style.item}>
         <span><img src="img/message.png" alt="message" /></span>
-        <Link to="/messages" activeClassName={style.active_link}>Messages  </Link>
+        <Link to="/messages" >Messages  </Link>
         </div>
       <div className={style.item}>
         <span>
