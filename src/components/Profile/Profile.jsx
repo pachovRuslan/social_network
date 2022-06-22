@@ -3,25 +3,18 @@ import style from './Profile.module.css';
 import Posts from './Posts/Index';
 import FriendsBar from './FriendsBar/FriendsBar';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
-import {addPostActionCreator, updateNewPostActionCreator} from '../../redux/profilesDataReducer'
 
 function Profile(props) {
-
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator());
-
+    props.addPost();
   }
-  let onPostChange =() => {
+  let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch(updateNewPostActionCreator(text))
-
+    props.updateNewPostText(text);
   }
-
-
   return (
-
     <div className={style.profile}>
       {props.profilesData.map((info) => (<ProfileInfo
         name={info.name}
@@ -38,12 +31,12 @@ function Profile(props) {
       <div className={style.new_post}>
         <div>
           <input
-          placeholder="write new message ... "
-          onChange={onPostChange}
-          value={props.newPostText}
-          ref={newPostElement}
+            placeholder="write new message ... "
+            onChange={onPostChange}
+            value={props.newPostText}
+            ref={newPostElement}
           />
-          </div>
+        </div>
         <div className={style.send_button}>
           <img onClick={addPost} src='img/send.png' alt='send'></img>
         </div>
@@ -52,7 +45,6 @@ function Profile(props) {
         {props.profilesData.map((friend) => (<FriendsBar
           name_friend={friend.name}
           avatar_friend={friend.avatar} />))}
-
       </div>
       <div className={style.post}>
         {props.profilesData.map((post) => (<Posts
@@ -62,7 +54,6 @@ function Profile(props) {
         />))[0]}
       </div>
     </div>
-
   )
 }
 

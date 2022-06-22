@@ -1,47 +1,31 @@
 import React from 'react'
 import style from './Messages.module.css';
-import { Link } from 'react-router-dom';
-import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/messagesReducer';
+import DialogItem from './DialogItem';
+import MessagesItem from './MessagesItem';
 
-const DialogItem = (props) => {
-  let path = "/messages/" + props.id;
-  return (
-    <div className={style.contact} >
-      <div className={style.friend_ava}>{props.avatar}</div>
-      <div className={style.friend_name}><Link to={path}>{props.name}</Link></div>
-    </div>
-  )
-}
-const MessagesItem = (props) => {
-  return (
-    <div>
-      <div className={style.dialog} >
-        {props.message}
-      </div>
-    </div>
-  )
-}
 function Messages(props) {
+  console.log(props)
   let newMessageElement = React.createRef();
+ 
   let addMessage = () => {
-    props.dispatch(sendMessageCreator());
+    props.addMessage();
   }
   let onMessageChange = () => {
     let text = newMessageElement.current.value;
-    props.dispatch(updateNewMessageBodyCreator(text))
+    props.onMessageChange(text)
   }
   return (
     <div className={style.Messages}>
       <div className={style.message}>
         <div className={style.contacts}>
-          {props.profilesData.map((dialog) => (<DialogItem
+          {props.state.profilesData.map((dialog) => (<DialogItem
             name={dialog.name}
             id={dialog.id}
             avatar={dialog.avatar} />))}
         </div>
         <div className={style.dialog_block}>
           <div className={style.dialog}>
-            {props.messages.map((message) => (<MessagesItem
+            {props.state.messages.map((message) => (<MessagesItem
               message={message.message}
               id={message.id} />))}
           </div>
@@ -49,7 +33,7 @@ function Messages(props) {
             <input
               placeholder="create new post ... "
               onChange={onMessageChange}
-              value={props.newMessageBody}
+              value={props.state.newMessageBody}
               ref={newMessageElement}
             />
             <div className={style.send_button}>
