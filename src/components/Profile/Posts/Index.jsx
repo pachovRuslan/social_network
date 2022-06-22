@@ -3,7 +3,7 @@ import Post from './Post'
 import style from './Posts.module.css';
 
 function Posts(props) {
-
+  console.log(props)
   return (
     <div className={style.Posts} >
 

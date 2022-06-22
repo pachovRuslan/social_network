@@ -13,8 +13,8 @@ function App(props) {
       <Header avatar = {props.state.profilesData[0].avatar} />
       <Nav/>
       <Routes>
-        <Route exact path = '/messages/' element = {<MessagesContainer store={props.store} />} />
-        <Route exact path = '/profile' element = {<ProfileContainer store={props.store} />} />
+        <Route exact path = '/messages/' element = {<MessagesContainer  />} />
+        <Route exact path = '/profile' element = {<ProfileContainer />} />
         <Route exact path = '/news' element = {<News profilesData={props.state.profilesData} />} />
         <Route exact path = '/setting' element = {<Settings />} />
       </Routes>
