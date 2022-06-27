@@ -6,11 +6,13 @@ function News(props) {
 
     return (
         <div className={style.Content}>
-            {props.profilesData.map((post) =>
+            {props.state.profilesData.map((post) =>
             (<Posts
+                key={post.id}
                 name={post.name}
                 avatar={post.avatar}
-                posts={post.posts} />))}
+                posts={post.posts} 
+                />))}
         </div>
     )
 }

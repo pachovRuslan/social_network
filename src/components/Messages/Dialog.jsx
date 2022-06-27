@@ -18,7 +18,7 @@ function Dialog(props) {
         <div className={style.contacts}>
           {props.profilesData.map((dialog) => (<DialogItem
             name={dialog.name}
-            id={dialog.id}
+            key={dialog.id}
             avatar={dialog.avatar} />))}
         </div>
         <div className={style.select_block}>

@@ -32,6 +32,12 @@ const Nav = () => {
         </span>
         <Link to="/setting">Setting </Link>
       </div>
+      <div className={style.item}>
+        <span>
+          <img src="img/profile.png" alt="users" />
+        </span>
+        <Link to="/users">Users </Link>
+      </div>
     </div>
   );
 }

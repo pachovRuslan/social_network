@@ -3,20 +3,22 @@ import './App.css';
 import Header from './components/Header/Header.jsx';
 import Nav from './components/Nav/Navbar.jsx';
 import MessagesContainer from './components/Messages/MessagesContainer';
-import News from './components/news/News';
+import NewsContainer from './components/news/NewsContainer';
 import Settings from './components/Settings/Settings';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
-function App(props) {
+function App() {
   return (
     <div className = 'app-wrapper' >
-      <Header avatar = {props.state.profilesData[0].avatar} />
+      <Header/>
       <Nav/>
       <Routes>
-        <Route exact path = '/messages/' element = {<MessagesContainer store={props.store} />} />
-        <Route exact path = '/profile' element = {<ProfileContainer store={props.store} />} />
-        <Route exact path = '/news' element = {<News profilesData={props.state.profilesData} />} />
+        <Route exact path = '/messages/' element = {<MessagesContainer  />} />
+        <Route exact path = '/profile' element = {<ProfileContainer />} />
+        <Route exact path = '/news' element = {<NewsContainer />} />
         <Route exact path = '/setting' element = {<Settings />} />
+        <Route exact path = '/users' element = {<UsersContainer />} />
       </Routes>
     </div>);
 }

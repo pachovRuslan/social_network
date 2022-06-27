@@ -11,7 +11,9 @@ function Posts(props) {
         message={post.message}
         like_count={post.like_count}
         avatar={props.avatar}
-        name={props.name} />
+        name={props.name} 
+        key={props.id}/>
+        
       ))
       }
 

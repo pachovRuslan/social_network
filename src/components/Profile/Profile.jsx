@@ -5,12 +5,13 @@ import FriendsBar from './FriendsBar/FriendsBar';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 function Profile(props) {
+  // console.log(props)
   let newPostElement = React.createRef();
 
   let addPost = () => {
     props.addPost();
   }
-  let onPostChange = () => {
+  let updateNewPostText = () => {
     let text = newPostElement.current.value;
     props.updateNewPostText(text);
   }
@@ -24,6 +25,7 @@ function Profile(props) {
         Hometown={info.Hometown}
         Mobile={info.Mobile}
         Current_city={info.Current_city}
+        key={info.id}
       />))[0]}
       <div className={style.block2}>
         Friends 9
@@ -31,8 +33,8 @@ function Profile(props) {
       <div className={style.new_post}>
         <div>
           <input
-            placeholder="write new message ... "
-            onChange={onPostChange}
+            placeholder=" create new post ..."
+            onChange={updateNewPostText}
             value={props.newPostText}
             ref={newPostElement}
           />
@@ -51,6 +53,7 @@ function Profile(props) {
           name={post.name}
           avatar={post.avatar}
           posts={post.posts}
+          key={post.id}
         />))[0]}
       </div>
     </div>

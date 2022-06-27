@@ -3,10 +3,10 @@ import style from './Messages.module.css';
 import DialogItem from './DialogItem';
 import MessagesItem from './MessagesItem';
 
+
 function Messages(props) {
-  console.log(props)
   let newMessageElement = React.createRef();
- 
+
   let addMessage = () => {
     props.addMessage();
   }
@@ -18,22 +18,22 @@ function Messages(props) {
     <div className={style.Messages}>
       <div className={style.message}>
         <div className={style.contacts}>
-          {props.state.profilesData.map((dialog) => (<DialogItem
+          {props.profilesData.map((dialog) => (<DialogItem
             name={dialog.name}
-            id={dialog.id}
+            key={dialog.id}
             avatar={dialog.avatar} />))}
         </div>
         <div className={style.dialog_block}>
           <div className={style.dialog}>
-            {props.state.messages.map((message) => (<MessagesItem
+            {props.messages.messages.map((message) => (<MessagesItem
               message={message.message}
-              id={message.id} />))}
+              key={message.id} />))}
           </div>
           <div className={style.input_block}>
             <input
-              placeholder="create new post ... "
+              placeholder="write new message ... "
               onChange={onMessageChange}
-              value={props.state.newMessageBody}
+              value={props.messages.newMessageBody}
               ref={newMessageElement}
             />
             <div className={style.send_button}>

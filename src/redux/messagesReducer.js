@@ -1,26 +1,29 @@
 const SEND_MESSAGE = 'SEND-MESSAGE';
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 
-let initialState = [
-        {
-            message: 'hi dear', id: '1',
-            newMessageBody: ''
-        }
-    ]
+let initialState = {
+    messages: [
+        { message: 'hi dear', id: 1 },
+        { message: 'hi dear 2', id: 2 }
+    ],
+    newMessageBody: ''
+}
 
 const messagesReducer = (state = initialState, action) => {
+
     switch (action.type) {
-        case SEND_MESSAGE:
-            let newMessage = {
-                message: state.newMessageBody,
-                id: '2'
-            };
-            state.push(newMessage);
-            state.newMessageBody = '';
-            return state
         case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.newText;
-            return state;
+            return {
+                ...state,
+                newMessageBody: action.newText
+            }
+        case SEND_MESSAGE:
+            let newText = state.newMessageBody;
+            return {
+                ...state,
+                newMessageBody: '',
+                messages: [...state.messages, { message: newText, id: 3 }]
+            };
         default:
             return state;
     }
